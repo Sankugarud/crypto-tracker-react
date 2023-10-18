@@ -5,7 +5,6 @@ import CoingInfo from '../../MainCoinPage/coinPage/CoingInfo';
 import ComaireTwobtns from '../compareButtons/ComaireTwobtns';
 import apicall from '../../functions/apicall';
 import coinPrices from '../../functions/coinprices';
-import Loader from '../../Dashboard/loader/Loader';
 import Listcomponent from '../../Dashboard/listcomponent/Listcomponent';
 import convertDate from '../../functions/convirtDate';
 import './comparePgae.css'
@@ -18,7 +17,6 @@ const ComparePage = React.memo(({changeTheme}) => {
   const [days, setDays] = useState(30);
   const [cryptodata1, setCryptoData1] = useState([]);
   const [cryptodata2, setCryptoData2] = useState([]);
-  const [loader, setLoader] = useState(true);
   const [priceType, setPriceType] = useState('prices');
   const [combinedChartData, setCombinedChartData] = useState({
     labels: [], // Assuming you want the same labels for both datasets
@@ -45,7 +43,6 @@ const ComparePage = React.memo(({changeTheme}) => {
   });
  
   const backgroundColor = changeTheme ? 'white' : 'black';
-  const textColor = changeTheme ? 'black' : 'white';
   // Date
   const handleChange = async (e) => {
     setDays(e.target.value);
@@ -65,62 +62,59 @@ const ComparePage = React.memo(({changeTheme}) => {
     setPriceType(e.target.value);
     console.log(e.target.value)
   };
-  let typePrice = priceType;
-  console.log(priceType);
-  const getfetchData = async () => {
-    try {
-      setLoader(true);
-      const data1 = await apicall(coin1);
-      const data2 = await apicall(coin2);
-      console.log(typePrice);
-      if (data1 && data2) {
-        CoingInfo(setCryptoData1, data1);
-        CoingInfo(setCryptoData2, data2);
-        console.log(priceType);
-        const prices1 = await coinPrices(coin1, days, priceType);
-        const prices2 = await coinPrices(coin2, days, priceType);
-
-        if (prices1.length > 0 && prices2.length > 0) {
-          setCombinedChartData({
-            labels: prices1.map((price) => convertDate(price[0])), // Assuming the labels are the same
-            datasets: [
-              {
-                label: coin1,
-                data: prices1.map((price) => price[1]),
-                borderColor: 'green',
-                fill: false,
-                borderWidth: 1,
-                tension: 0.25,
-                yAxisID: 'y',
-                pointRadius: 0,
-              },
-              {
-                label: coin2,
-                data: prices2.map((price) => price[1]),
-                borderColor: 'red',
-                fill: false,
-                borderWidth: 1,
-                tension: 0.25,
-                yAxisID: 'y1',
-                pointRadius: 0,
-              },
-            ],
-          });
-          setLoader(false);
-        }
-      }
-    } catch (error) {
-      setLoader(true);
-      <Loader/>
-    }
-  };
-
   useEffect(() => {
-    getfetchData();
-  }, [coin1, coin2, days,priceType ]);
+    const getfetchData = async () => {
+      try {
+        const data1 = await apicall(coin1);
+        const data2 = await apicall(coin2);
+  
+        if (data1 && data2) {
+          CoingInfo(setCryptoData1, data1);
+          CoingInfo(setCryptoData2, data2);
+  
+          const prices1 = await coinPrices(coin1, days, priceType);
+          const prices2 = await coinPrices(coin2, days, priceType);
+  
+          if (prices1.length > 0 && prices2.length > 0) {
+            setCombinedChartData({
+              labels: prices1.map((price) => convertDate(price[0])),
+              datasets: [
+                {
+                  label: coin1,
+                  data: prices1.map((price) => price[1]),
+                  borderColor: 'green',
+                  fill: false,
+                  borderWidth: 1,
+                  tension: 0.25,
+                  yAxisID: 'y',
+                  pointRadius: 0,
+                },
+                {
+                  label: coin2,
+                  data: prices2.map((price) => price[1]),
+                  borderColor: 'red',
+                  fill: false,
+                  borderWidth: 1,
+                  tension: 0.25,
+                  yAxisID: 'y1',
+                  pointRadius: 0,
+                },
+              ],
+            });
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+    getfetchData(); // Call the function here
+  
+  }, [coin1, coin2, days, priceType]);
+  
 
   return (
-    <div style={{backgroundColor}} class="compare_pages">
+    <div style={{backgroundColor}} className="compare_pages">
       
       
           
@@ -152,10 +146,10 @@ const ComparePage = React.memo(({changeTheme}) => {
            <LineChart changeTheme={changeTheme} chartData={combinedChartData} />
         
       </div>
-      <div className="two_discriptions">
-        <Discription changeTheme={changeTheme} data={cryptodata1} />
-        <Discription changeTheme={changeTheme} data={cryptodata2} />
-      </div>
+          <div className="two_discriptions">
+            <Discription changeTheme={changeTheme} data={cryptodata1} />
+            <Discription changeTheme={changeTheme} data={cryptodata2} />
+          </div>
         </div>
         
       

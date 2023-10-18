@@ -41,7 +41,7 @@ const ComaireTwobtns = ({changeTheme, coin1, coin2, handleChangecoin1,handleChan
 
   return (
     <div >
-      
+        {coins100fetch.length > 0 && (
       <div className="select-container">
         <div className="select1Component">
           <h4 style={{color:textColor}}>Crypto 1</h4>
@@ -78,9 +78,8 @@ const ComaireTwobtns = ({changeTheme, coin1, coin2, handleChangecoin1,handleChan
             ))}
           </Select>
         </div>
-      
-      
       </div>
+        )}
     </div>
   );
 };

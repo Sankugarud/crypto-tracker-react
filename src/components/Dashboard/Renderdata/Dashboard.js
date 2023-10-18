@@ -14,7 +14,6 @@ const Dashboard = ({changeTheme}) => {
   const [page, setPage] = useState(1);
   const [loader, setLoader] = useState(true);
   const backgroundColor = changeTheme ? 'white' : 'black';
-  const textColor = changeTheme ? 'black' : 'white';
   const handleChangePage = (e, value) => {
     setPage(value);
     let previousIndex = (value -1 ) *10;
@@ -41,7 +40,7 @@ const Dashboard = ({changeTheme}) => {
     item.symbol.toLowerCase().includes(search.toLowerCase())
   );
 
-  console.log(data);
+
 
   return (
     <div className="dashboard_container" style={{backgroundColor}}>
