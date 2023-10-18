@@ -5,7 +5,6 @@ import SearchIcon from '@mui/icons-material/Search';
 const SearchBar = ({changeTheme,search, onsearch}) => {
    
   const backgroundColor = changeTheme ? 'white' : 'black';
-  const textColor = changeTheme ? 'black' : 'white';
   return (
     <div style={{backgroundColor}}>
         <div style={{backgroundColor}} className="serachFilter">

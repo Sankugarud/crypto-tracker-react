@@ -3,7 +3,6 @@ import './home.css'
 import Maincomponent from '../landingpage/Maincomponent/Maincomponent'
 
 const Home = ({changeTheme}) => {
-  const backgroundColor = changeTheme ? 'white' : 'black';
 
   
   return (

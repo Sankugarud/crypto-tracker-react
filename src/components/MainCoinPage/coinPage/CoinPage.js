@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import Listcomponent from '../../Dashboard/listcomponent/Listcomponent';
-import Loader from '../../Dashboard/loader/Loader';
-import Header from '../../header/Header';
 import Discription from '../discription/Discription';
 import CoingInfo from './CoingInfo';
 import './coinPage.css';
@@ -17,10 +15,9 @@ import ChangeBtns from '../../charts/changebuttons/ChangeBtns';
 const CoinPage = ({changeTheme}) => {
   const { coinId } = useParams();
   const [data, setData] = useState([]);
-  const [loader, setLoader] = useState(true);
   const [days, setDays] = useState(30);
   const [priceType, setPriceType] = useState('prices');
-  const [listdata, setlistdata] = useState([]);
+
   const [chartData, setChartData] = useState({
     datasets: [
       {
@@ -31,34 +28,26 @@ const CoinPage = ({changeTheme}) => {
   });
 
   const backgroundColor = changeTheme ? 'white' : 'black';
-  const textColor = changeTheme ? 'black' : 'white';
- const fetchdata = async()=> {
-    const gettingListdata = await apicall(coinId);
-    CoingInfo(setlistdata, gettingListdata);
- }
-useEffect(() => {
-  fetchdata();
-}, []);
+ 
+
   // Days change function
-  const fetchData = useCallback(async () => {
+  
+useEffect(() => {
+  const fetchData = async () => {
     try {
-      setLoader(true);
+     
       const coinData = await apicall(coinId);
       const prices = await coinPrices(coinId, days, priceType);
-      setLoader(false);
+    
       CoingInfo(setData, coinData);
       settingChartdata(setChartData, prices, coinId);
      
     } catch (error) {
       console.error('Error fetching data:', error);
-      setLoader(true);
-        <Loader/>
     }
-  }, [coinId, days, priceType]);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+  }
+  fetchData();
+},  [coinId, days, priceType]);
 
   const handleChange = useCallback((e) => {
     setDays(e.target.value);
@@ -66,12 +55,12 @@ useEffect(() => {
 
   const handleChangePrice = (e) => {
     setPriceType(e.target.value);
-    
+
   };
   return (
     <div style={{backgroundColor}}  className='coin_page'>
       <div style={{backgroundColor}}  className='list_coin'>
-      <Listcomponent changeTheme={changeTheme} item={listdata} />
+      <Listcomponent changeTheme={changeTheme} item={data} />
       </div>
         <div style={{backgroundColor}}  className="coingPage">
           <div className={changeTheme ? 'lineChart-change' : "lineChart"}>
