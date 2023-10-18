@@ -1,0 +1,39 @@
+.searchbar {
+    padding: 1.2rem 4rem;
+    width: 100%;
+    border-radius: 5rem;
+    background-color: #1b1b1b;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: white;
+    border: 1px solid black;
+  }
+  
+  .serachFilter {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 70%;
+    margin: 1px auto;
+    border-radius: 2rem;
+    border: none;
+  }
+  
+  .search-icon {
+    z-index: 1;
+    position: relative;
+    left: 3rem;
+    color: gray;
+  }
+
+  @media screen and (max-width:1000px){
+    .search-icon {
+      z-index: 1;
+      position: relative;
+      left: 2.8rem;
+    }
+  }
+  
+

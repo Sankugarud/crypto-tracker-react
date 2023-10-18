@@ -1,0 +1,66 @@
+.header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    color: rgb(240, 240, 240);
+    font-size: 1rem;
+    align-items: center;
+    z-index: 100;
+}
+
+body{
+    background-color: #111111;
+}
+.rightside{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.leftside h1{
+    font-size: 2rem;
+}
+.rightside a{
+    color: rgb(155, 152, 152);
+    text-decoration: none;
+   
+}
+.rightside a:hover{
+    color: rgb(218, 217, 217);
+    transition: all 0.4s;
+}
+
+.menu_drawer{
+    display: none;
+}
+
+@media screen and (max-width:800px){
+    .rightside{
+        display: none;
+      
+    }
+    .header{
+        font-size: 0.5rem;
+        padding: 1rem 1rem;
+    }
+    .menu_drawer{
+        display: block;
+        background-color: #1f1f1f;
+
+    }
+
+    .all_menu{
+        display: flex;
+        flex-direction: column;
+        padding: 1.2rem;
+        gap: 0.8rem;
+       background-color: #1f1f1f;
+       height: 100vh;
+    }
+    .all_menu a{
+        text-decoration: none;
+        color: rgb(224, 224, 224);
+    
+    }
+}

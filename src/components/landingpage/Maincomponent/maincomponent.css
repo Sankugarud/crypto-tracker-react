@@ -1,0 +1,148 @@
+.left_side h1{
+    font-size: 6rem;
+    color: white;
+}
+.maincomponent{
+    padding: 4rem 3rem;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    justify-content: space-between;
+    overflow: hidden; 
+}
+
+.track_crypto {
+    color: rgb(255, 255, 255) !important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(253, 253, 253);
+}
+
+.track_crypto:hover {
+    color: rgb(0, 0, 0) !important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    transition: all 0.4s;
+}
+
+.track_crypto1 {
+    color: rgb(0, 0, 0) !important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+}
+
+.track_crypto1:hover {
+    color: rgb(255, 255, 255) !important;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+    transition: all 0.4s;
+}
+.left_side{
+    margin-top: 1rem;
+    width: 60%;
+   
+}
+.right_side{
+    width: 30%; 
+    
+}
+.real-time{
+    
+    color:#3a80e9 !important;
+}
+.left_side p{
+    color: rgb(175, 175, 175);
+}
+.btns{
+    display: flex;
+    margin-top: 2rem;
+    gap: 20px;
+    width: 100%;
+}
+.sharebtn{
+   padding: 32rem;
+}
+.iphone{
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+
+}
+.iphoneback{
+    position: absolute;
+    width: 250px;
+    padding: 2rem 0rem 0rem 2rem;
+   
+}
+
+@media screen and (max-width:1200px){
+    .left_side h1{
+        font-size: 5rem;
+        color: white;
+    }
+}
+@media screen and (max-width:1000px){
+    .left_side h1{
+        font-size: 4rem;
+        color: white;
+    }
+   
+}
+@media screen and (max-width:800px){
+    .maincomponent{
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+    }
+    .left_side h1{
+        font-size: 4rem;
+        color: white;
+    }
+    .left_side{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+       text-align: center;
+       width: 100%;
+
+    }
+    .btns {
+        display: flex;
+        justify-content: center; 
+        margin-top: 2rem; 
+       
+    }
+
+    .btns button {
+        margin: 0 10px;
+    }
+    .right_side{
+        width: 50%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+    
+}
+@media screen and (max-width:500px){
+    .maincomponent{
+        padding: 2rem 3rem;
+    }
+    .left_side h1{
+        font-size: 3rem;
+    } 
+    .iphone{
+      
+        width: 250px;
+    }
+    .iphoneback{
+        
+        width: 200px;
+       
+       
+    }
+    h1{
+        font-size: 0.7rem;
+    }
+}

@@ -1,0 +1,220 @@
+.box1{
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    height: 70px;
+}
+.box1:hover{
+    background-color: rgb(36, 34, 34);
+    transition: all 0.5s;
+}
+.box3{
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    height: 70px;
+}
+.box3:hover{
+    background-color: rgb(148, 146, 146);
+    transition: all 0.5s;
+}
+.first1{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 20%;
+    
+}
+.second1{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 30%;
+   
+}
+.forth1{
+    width: 15%;
+}
+.third1{
+    display: flex;
+    gap: 1rem;
+    width: 30%;
+}
+.tVolume1{
+    width: 50%;
+}
+.plus1{
+    border: 1px solid rgb(16, 230, 16);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem;
+}
+.plus1:hover{
+    background-color: rgb(22, 235, 22);
+}
+.minus1{
+    border: 1px solid red;
+    border-radius: 50%;
+    padding: 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.minus1:hover{
+    background-color: red;
+}
+.percentage-plus1{
+    background-color: transparent;
+    padding: 0.2rem 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgb(3, 247, 15);
+    color: rgb(3, 247, 15);
+}
+.percentage-plus1:hover{
+    color: white;
+    background-color: green;
+    border: 1px solid rgb(26, 240, 7);
+}
+.percentage-minus1{
+    background-color: transparent;
+    padding: 0.2rem 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid red;
+    color:red;
+}
+.percentage-minus1:hover{
+    color: white;
+    background-color: red;
+    border: 1px solid red;
+}
+.img2{
+    width: 40px;
+}
+@media screen and (max-width:800px){
+    .img2{
+        width: 35px;
+    }
+    .box1{
+       
+        font-size: 0.7rem;
+    }
+    .mCap{
+        display: none;
+    }
+    .first1{
+        width: 25%;
+    }
+    .second1{
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        width: 35%;
+       
+    }
+    .third1{
+        
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 20%;
+    }
+    .forth1{
+        width: 15%;
+        text-align: center;
+    }
+    .minus1, .plus1{
+        display: none;
+    }
+    .tVolume1{
+        width: 100%;
+        text-align: right;
+    }
+}
+@media screen and (max-width:600px){
+    .first1{
+        width: 35%;
+    }
+    .second1{
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        width: 30%;
+       
+    }
+    .percentage-plus1{
+        background-color: transparent;
+        padding: 0.2rem 1rem;
+        border-radius: 1.5rem;
+        border: 1px solid rgb(3, 247, 15);
+        color: rgb(3, 247, 15);
+    }
+    .percentage-minus1{
+        background-color: transparent;
+        padding: 0.2rem 1rem;
+        border-radius: 1.5rem;
+        border: 1px solid red;
+        color:red;
+    }
+
+    .third1{
+        display: flex;
+        gap: 1rem;
+        width: 20%;
+    }
+    .forth1{
+        width: 15%;
+        text-align: center;
+    }
+    .minus1, .plus1{
+        display: none;
+    }
+}
+@media screen and (max-width:500px){
+    .first1{
+        width: 40%;
+    }
+    .second1{
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        width: 30%;
+    }
+    .third1{
+        display: flex;
+        gap: 1rem;
+        width: 17%;
+    }
+    .forth1{
+        width: 20%;
+        text-align: center;
+    }
+    .tVolume1{
+        align-items: center;
+    }
+    .percentage-plus1{
+        font-size: 0.6rem;
+        width: 80%;
+    }
+    .percentage-minus1{
+        font-size: 0.6rem;
+        width: 80%;
+    }
+    .box1{
+        padding: 1rem 0rem;
+        border-radius: 1rem;
+        font-size: 0.9rem;
+        height: 70px;
+    }
+}
+@media screen and (max-width:400px){
+    .box1{
+        font-size: 0.5rem;
+    }
+}

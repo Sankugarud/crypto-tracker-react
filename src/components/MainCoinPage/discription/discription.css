@@ -1,0 +1,44 @@
+.discription_desc a{
+    color: rgb(124, 122, 122);
+    text-decoration: underline;
+}
+.discription_desc a:hover{
+    color: #3a80e9;
+}
+.discription_desc{
+    color: rgb(161, 158, 158);
+}
+.discription_h{
+    color: rgb(255, 255, 255);
+}
+.discription_titles{
+    background-color: #1b1b1b;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.discription_titles{
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.discription_bigsmall{
+    display: flex;
+    gap: 0.5rem;
+}
+.change_reading{
+    color: rgb(84, 148, 231);
+    cursor: pointer;
+}
+@media screen and (max-width:500px){
+    .discription_titles{
+        
+        padding: 1.5rem 0rem;
+    
+    }
+}

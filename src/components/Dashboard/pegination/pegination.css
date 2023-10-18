@@ -1,0 +1,28 @@
+.pagination-container{
+    margin: 0 auto 2rem auto;
+    width: 26%;
+}
+@media screen and (max-width:1200px){
+    .pagination-container{
+        margin: 0 auto 2rem auto;
+        width: 35%;
+    }
+}
+@media screen and (max-width:1000px){
+    .pagination-container{
+        margin: 0 auto 2rem auto;
+        width: 40%;
+    }
+}
+@media screen and (max-width:800px){
+    .pagination-container{
+        margin: 0 auto 2rem auto;
+        width: 55%;
+    }
+}
+@media screen and (max-width:600px){
+    .pagination-container{
+        margin: 0 auto 2rem auto;
+        width: 80%;
+    }
+}
