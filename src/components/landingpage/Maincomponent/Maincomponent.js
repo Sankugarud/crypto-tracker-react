@@ -1,13 +1,27 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './maincomponent.css'
 import Buttons from '../../button/Buttons'
 import iphone from '../../../assets/iphone.png'
 import iphoneBack from '../../../assets/gradient 1.png'
 import {motion} from 'framer-motion'
+import { useNavigate } from 'react-router-dom';
+import ShareBtn from '../sharebtn/ShareBtn'
+
 
 const Maincomponent = ({changeTheme}) => {
+  const [showPopup, setShowPopup] = useState(false);
   const backgroundColor = changeTheme ? 'white' : 'black';
   const trackCryptoClass = changeTheme ? 'track_crypto1' : 'track_crypto';
+  const navigate = useNavigate();
+
+  const handleShowShares = () => {
+    setShowPopup(true);
+  }
+
+  // Function to handle closing the popup
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  }
   return (
     <div style={{ backgroundColor }} className='maincomponent'>
         
@@ -28,8 +42,8 @@ const Maincomponent = ({changeTheme}) => {
                transition={{ duration: 0.5, delay:1 }}
             >Track crypto through a public api in real time. Visit the dashboard to do so!</motion.p>
             <div className="btns">
-                <Buttons btn='Dashboard'/>
-                <Buttons btn='Share' outline={true}/>
+                <Buttons btn='Dashboard' onclick={() => navigate('/dashboard')}/>
+                <button onClick={handleShowShares} className='sharebtn'>share</button>
             </div>
         </div>
         <div className="right_side">
@@ -40,6 +54,15 @@ const Maincomponent = ({changeTheme}) => {
             src={iphone} alt="iphone img" />
             <img className='iphoneback' src={iphoneBack} alt="iphoneBack" />
         </div>
+
+        {showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <span className="close" onClick={handleClosePopup}>&times;</span>
+            <ShareBtn />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
