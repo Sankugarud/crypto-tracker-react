@@ -5,4 +5,5 @@
     grid-template-columns: repeat(2, 1fr);
     flex-wrap: nowrap;
     background-color:cornflowerblue;
+    z-index: 2;
 }
