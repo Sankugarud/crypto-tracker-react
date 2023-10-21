@@ -10,6 +10,9 @@ import LineChart from '../../charts/linechart/LineChart';
 import Selectdays from '../../charts/selectDays/SelectDays';
 import settingChartdata from '../../functions/settingChartdata';
 import ChangeBtns from '../../charts/changebuttons/ChangeBtns';
+import BarChart from '../../charts/barChart/BarChart';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import BarChartIcon from '@mui/icons-material/BarChart';
 
 
 const CoinPage = ({changeTheme}) => {
@@ -17,6 +20,7 @@ const CoinPage = ({changeTheme}) => {
   const [data, setData] = useState([]);
   const [days, setDays] = useState(30);
   const [priceType, setPriceType] = useState('prices');
+  const [currentChartType, setCurrentChartType] = useState('line');
 
   const [chartData, setChartData] = useState({
     datasets: [
@@ -57,6 +61,14 @@ useEffect(() => {
     setPriceType(e.target.value);
 
   };
+
+  const handleShowChartClick = () => {
+    setCurrentChartType('line');
+  };
+  
+  const handleBarChartClick = () => {
+    setCurrentChartType('bar');
+  };
   return (
     <div style={{backgroundColor}}  className='coin_page'>
       <div style={{backgroundColor}}  className='list_coin'>
@@ -66,10 +78,19 @@ useEffect(() => {
           <div className={changeTheme ? 'lineChart-change' : "lineChart"}>
             <div className="select_daysz">
             <Selectdays changeTheme={changeTheme} days={days} handleChange={handleChange} />
+            <div className="options_charts">
+              <ShowChartIcon onClick={handleShowChartClick} className= {changeTheme?"chartLine":'barChart'} />
+              <BarChartIcon onClick={handleBarChartClick} className= {changeTheme?"chartLine":'barChart'} />
+            </div>
             </div>
             
             <ChangeBtns priceType={priceType} handleChangePrice={handleChangePrice} />
-              <LineChart chartData={chartData} />
+              
+            {currentChartType === 'line' ? (
+                <LineChart chartData={chartData} />
+              ) : (
+                <BarChart chartData={chartData} />
+              )}
           </div>
           <div className="discriptions">
             <Discription changeTheme={changeTheme} data={data} />

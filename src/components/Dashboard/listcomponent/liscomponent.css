@@ -48,7 +48,7 @@
     width: 50%;
 }
 .plus1{
-    border: 1px solid rgb(16, 230, 16);
+    border: 1px solid rgb(31, 100, 31);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -56,7 +56,7 @@
     padding: 0.35rem;
 }
 .plus1:hover{
-    background-color: rgb(22, 235, 22);
+    background-color: rgb(26, 78, 26);
 }
 .minus1{
     border: 1px solid red;
@@ -74,13 +74,13 @@
     background-color: transparent;
     padding: 0.2rem 2rem;
     border-radius: 1.5rem;
-    border: 1px solid rgb(3, 247, 15);
-    color: rgb(3, 247, 15);
+    border: 1px solid rgb(4, 190, 14);
+    color: rgb(9, 184, 17);
 }
 .percentage-plus1:hover{
     color: white;
-    background-color: green;
-    border: 1px solid rgb(26, 240, 7);
+    background-color: rgb(6, 160, 6);
+    border: 1px solid rgb(16, 128, 6);
 }
 .percentage-minus1{
     background-color: transparent;

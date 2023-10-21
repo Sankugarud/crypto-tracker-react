@@ -23,7 +23,8 @@ const Maincomponent = ({changeTheme}) => {
     setShowPopup(false);
   }
   return (
-    <div style={{ backgroundColor }} className='maincomponent'>
+    <div className="main_container">
+      <div style={{ backgroundColor }} className='maincomponent'>
         
         <div  className="left_side">
             <motion.h1 className={trackCryptoClass} 
@@ -63,7 +64,10 @@ const Maincomponent = ({changeTheme}) => {
           </div>
         </div>
       )}
+      
     </div>
+    </div>
+    
   )
 }
 

@@ -7,7 +7,23 @@
     background-color: #1d1d1d;
 }
 .select_daysz{
-    width: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 3rem;
+}
+.options_charts{
+    display: flex;
+    gap:1rem
+}
+.chartLine{
+    cursor: pointer;
+    color: black;
+   
+}
+.barChart{
+   color: white;
 }
 .coin_page{
     margin: 1rem 5rem;

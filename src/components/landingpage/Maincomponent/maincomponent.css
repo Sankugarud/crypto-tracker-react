@@ -6,13 +6,16 @@
     padding: 4rem 3rem;
     display: flex;
     
-    height: 100%;
+    height: 100vh;
     width: 100%;
     margin: 0;
     justify-content: space-between;
     overflow: hidden; 
 }
-
+.footer{
+    width: 100%;
+    display: block;
+}
 .track_crypto {
     color: rgb(255, 255, 255) !important;
     -webkit-text-stroke-width: 1px;
@@ -139,6 +142,7 @@
     }
     .right_side{
         width: 50%; 
+        height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;

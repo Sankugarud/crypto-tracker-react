@@ -24,7 +24,7 @@ const Header = ({ changeTheme, setChangeTheme }) => {
   return (
     <div style={{ backgroundColor }} className="header">
       <div className="leftside">
-        <h1 style={{ color: textColor }}>CryptoTracker</h1>
+        <h1 style={{ color: textColor }} onClick={()=>navigate('/')}>CryptoTracker</h1>
       </div>
       <div className="rightside">
         <Switch {...label} checked={changeTheme} onClick={handleToggle} />
